@@ -5,6 +5,7 @@ module.exports = (config) => {
       'app/app.js',
       'test/*Spec.js',
     ],
+    browsers: ['Chrome'],
     logLevel: config.LOG_DEBUG
   })
 }
