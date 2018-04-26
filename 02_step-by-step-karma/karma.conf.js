@@ -9,6 +9,7 @@ module.exports = (config) => {
       'test/*Spec.ts': ['typescript'],
     },
     browsers: ['Chrome'],
+    reporters: ['mocha'],
     logLevel: config.LOG_DEBUG
   })
 }
