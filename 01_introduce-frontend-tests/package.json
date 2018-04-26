@@ -7,12 +7,15 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
   }
 }
