@@ -3,8 +3,11 @@ module.exports = (config) => {
     frameworks: ['jasmine'],
     files: [
       'app/app.js',
-      'test/*Spec.js',
+      'test/*Spec.ts',
     ],
+    preprocessors: {
+      'test/*Spec.ts': ['typescript'],
+    },
     browsers: ['Chrome'],
     logLevel: config.LOG_DEBUG
   })
