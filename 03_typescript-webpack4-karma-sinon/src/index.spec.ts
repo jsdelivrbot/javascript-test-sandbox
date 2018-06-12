@@ -64,3 +64,23 @@ it('mock', () => {
 
   expect(order.getPayment()).toBe(180)
 })
+
+describe('fake', () => {
+  let clock: any
+
+  beforeEach(() => {
+    clock = sinon.useFakeTimers(1522541700000)
+  })
+
+  afterEach(() => {
+    clock.restore()
+  })
+
+  it('paid', () => {
+    const order = new Order()
+    order.add(new Item(100))
+    order.pay(new Date())
+
+    expect(order.receipt()).toBe('2018/4 100円')
+  })
+})
