@@ -84,3 +84,17 @@ describe('fake', () => {
     expect(order.receipt()).toBe('2018/4 100円')
   })
 })
+
+it('dummy', () => {
+  const item = new Item(100)
+  const order = new Order()
+  order.add(item)
+
+  const dummyCard: CreditCard = {
+    no: '1234-0000-1234-0000',
+    kind: 'visa',
+  }
+
+  order.payByCreditCard(new Date(), 20, dummyCard)
+  expect(order.getPayment()).toBe(80)
+})
