@@ -45,3 +45,22 @@ it('stub', () => {
   sinon.stub(obj, 'method')
   obj.method()
 })
+
+it('mock', () => {
+  const item = new Item()
+  const mock = sinon.mock(item)
+
+  mock.expects('calculateDiscount')
+    .twice()
+    .withArgs(10)
+    .returns(90)
+
+  const order = new Order()
+  order.add(item)
+  order.add(item)
+
+  order.pay(new Date(), 10)
+  mock.verify()
+
+  expect(order.getPayment()).toBe(180)
+})
